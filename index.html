@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<script src="js/rbo_cal.js" defer></script>
+	<script src="js/rbotable.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="css/rbo_cal.css">
+
+	<title>Calculation percent RBO</title>
+</head>
+
+
+<body class="block">
+	<!-----STYLE image-------------------------------------------------------------------->
+
+	<!----END -STYLE image-------------------------------------------------------------------->
+	<div align="center" id="block">
+		<div id="myDIV">
+			<!--BEGIN TEXT-->
+			<h1 align="center"> Deposit Photo Calculation</h1>
+
+
+		</div>
+		<!--END TEXT-->
+
+
+		<!-- <hr/ size = "1" color="blue"---->
+
+		<div class="forma">
+			<!--BEGIN FORMA-->
+			<h3 class="headline" align="center"></h3>
+
+			<form action="formdata.php" method="POST" name="f">
+
+
+				<!--------------------------------БЛОК ВВОДА ДАННЫХ--------------------------->
+				<fieldset name="INPUT">
+
+					<legend id="l1">
+						<h3> Entering data</h3>
+					</legend>
+					<table id="table1">
+						<tr>
+							<td>
+								<p class="wod"><label for="w">депо_зит &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; </label>
+									<input type="text" name="w" size="5" maxlength="9" class="input" /> </p>
+							</td>
+							<!--вклад  месяц-->
+							<td>
+								<p class="wod"><label for="h">Ввод % </label> &nbsp;&nbsp; &nbsp;&nbsp;
+									&nbsp;
+									<input type="text" name="h" size="4" maxlength="4" class="input" /> </p>
+							</td>
+							<!--вклад  месяц-->
+
+						</tr>
+
+					</table>
+					<!-- окно ввода веса человека -->
+
+					<!-- окно ввода роста человека -->
+				</fieldset>
+
+				<!---------------------------------------------------------------- ВЫВОД ДАННЫХ-------------------------------------->
+				<fieldset name="OUTPUT">
+					<legend id="l2">
+						<h3>Расчет_прибыли</h3>
+					</legend>
+
+					<table id="table2">
+						<tr>
+							<td>
+								<p> Прибыль_за_год &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+									<input class="out" type="text" name="ind" size="9" class="input" value="" />
+									&nbsp;<img src="images/s1rubl.png" alt="Наш рубль" />
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</p> <!-- окно вывода годовой прибыли -->
+								<h2 id="dm"> </h2>
+							</td>
+							<td>
+								<!--КНОПКА ЗАПУСКА-->
+								<p> <button class="button" onclick="iwh()" TYPE="button"> РАСЧЁТ </button>
+									<button class="button" TYPE="reset"> RESET </button> </p>
+							</td>
+
+						</tr>
+					</table>
+					<!-----------------------------------------------Конец кнопка запуска --------------------------------------------------------------->
+
+					<div class="table">
+
+						<h3>Таблица капиталиста: </h3>
+						<!----начальный вклад банка-->
+						<h3 id="a"> </h3>
+						<table id="table3">
+							<tr>
+								<th>after 1 Mont... </th>
+								<th>2 месяц</th>
+								<th>3 месяц</th>
+								<th>4 месяц</th>
+								<th>5 месяц</th>
+								<th>6 месяц</th>
+							</tr>
+							<tr>
+								<td>
+									<h4 id="m1"> </h4>
+								</td>
+								<!--вклад 1 месяц-->
+								<td>
+									<h4 id="m2"> </h4>
+								</td>
+								<!---вклад 2 месяц -->
+								<td>
+									<h4 id="m3"> </h4>
+								</td>
+								<!---3 месяц-->
+								<td>
+									<h4 id="m4"> </h4>
+								</td>
+								<!--4 --->
+								<td>
+									<h4 id="m5"> </h4>
+								</td>
+								<!--5 --->
+								<td>
+									<h4 id="m6"> </h4>
+								</td>
+								<!--- 6 вклад банка 2----->
+							</tr>
+							<tr>
+								<th>7 месяц </th>
+								<th>8 месяц</th>
+								<th>9 месяц</th>
+								<th>10 месяц</th>
+								<th>11 месяц</th>
+								<th>12 месяц</th>
+							</tr>
+							<tr>
+
+								<td>
+									<h4 id="m7"> </h4>
+								</td>
+								<!---7------>
+								<td>
+									<h4 id="m8"> </h4>
+								</td>
+								<!--- 8 доход 2--->
+								<td>
+									<h4 id="m9"> </h4>
+								</td>
+								<!---9 месяц--->
+								<td>
+									<h4 id="m10"> </h4>
+								</td>
+								<!---10--->
+								<td>
+									<h4 id="m11"> </h4>
+								</td>
+								<!---11--->
+								<td>
+									<h4 id="m12"> </h4>
+								</td>
+
+
+							</tr>
+
+						</table>
+						<!---End Table 3--->
+						<!----------------------Start PERCENT ----------------------------->
+						<table id="table3">
+							<tr>
+								<td>
+									<p> <input type="text" name="p" size="4" maxlength="4" class="input" value="0" />
+										<br>
+										<p>
+
+											<h2 id="perzent"> </h2>
+										</p>
+
+
+									</p>
+								</td>
+								<td>
+									<button class="button" onclick="man()" TYPE="button"> 錢 РАСЧЁТ </button>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+					<!--END TABLE-->
+
+
+
+				</fieldset>
+
+			</form>
+
+		</div>
+		<!--END FORMA-->
+		<!--END div table-->
+		<div id="footer">
+			<p>Copyright &copy; Haray-Vay. All Rights Reserved.<br /> </p>
+			<a href="mailto: rezhayri@gmail.com">email address</a>
+		</div>
+	</div>
+
+</body>
+
+</html>
